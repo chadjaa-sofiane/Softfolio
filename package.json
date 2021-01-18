@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "proxy": "http://localhost:4000/",
   "scripts": {
     "start": "node -r esm index.js",
     "dev": "nodemon -r esm index.js",
