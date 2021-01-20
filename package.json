@@ -1,32 +1,51 @@
 {
-  "name": "backend",
+  "name": "softfolio",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node -r esm index.js",
-    "dev": "nodemon -r esm index.js",
-    "preinstall": "npx npm-force-resolutions"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "proxy": "https://soft-folio.herokuapp.com",
+  "private": true,
   "dependencies": {
-    "apollo-server-express": "^2.19.0",
-    "bcrypt": "^5.0.0",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "esm": "^3.2.25",
-    "fs-capacitor": "^6.2.0",
-    "graphql-upload": "^11.0.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.10.16",
-    "mongoose-unique-validator": "^2.0.3",
-    "nodemon": "^2.0.6"
+    "@apollo/client": "^3.3.6",
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.5.0",
+    "apollo-upload-client": "^14.1.3",
+    "clsx": "^1.1.1",
+    "graphql": "^15.4.0",
+    "jwt-decode": "^3.1.2",
+    "moment": "^2.29.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "webpack --config webpack.dev.js",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {},
-  "resolutions": {
-    "fs-capacitor": "^6.2.0",
-    "graphql-upload": "^11.0.0"
-  }
+  "description": "chadjaa sofiane portfolio"
 }
