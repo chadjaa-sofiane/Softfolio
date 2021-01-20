@@ -58,11 +58,7 @@ export const useLogged = () => {
 };
 
 export const useMyInfo = () => {
-  const {
-    data: { getMyInfo },
-    loading,
-    error,
-  } = useQuery(GET_MY_INFO);
+  const { data, loading, error } = useQuery(GET_MY_INFO);
   if (loading || error) return {};
-  return getMyInfo;
+  if (data) return data.getMyInfo;
 };
