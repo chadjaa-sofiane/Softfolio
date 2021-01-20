@@ -1,7 +1,7 @@
 {
   "name": "softfolio",
   "version": "1.0.0",
-  "proxy": "https://soft-folio.herokuapp.com",
+  "proxy": "https://soft-folio.herokuapp.com/graphql",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.3.6",
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "webpack --config webpack.dev.js",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
