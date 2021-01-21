@@ -15,7 +15,6 @@ import {
   CardMedia,
   CardActions,
 } from "@material-ui/core";
-import Skeleton from "@material-ui/lab/Skeleton";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
 import ChatBubbleOutlinedIcon from "@material-ui/icons/ChatBubbleOutlined";
@@ -37,7 +36,7 @@ const useStyle = makeStyles((theme) => ({
   },
   body: {
     color: theme.palette.primary.main,
-    fontWeight: "600",
+    fontWeight: "500",
     margin: "0",
   },
   contect: {
@@ -89,13 +88,6 @@ function PostCard({ postData = {} }) {
   const history = useHistory();
   const [openCommens, hanleOpenComments] = React.useState(false);
   const date = new Date(parseInt(createdAt)).toISOString();
-  if (!postData)
-    return (
-      <div className={classes.root}>
-        <Skeleton variant="circle" animation="wave" width={70} height={70} />
-        <Skeleton variant="rect" animation="wave" width="100%" height={300} />
-      </div>
-    );
   return (
     <>
       <Card className={classes.root} variant="outlined">
@@ -120,7 +112,7 @@ function PostCard({ postData = {} }) {
         />
         <PostCardMedia sources={files} />
         <CardContent className={classes.contect}>
-          <Typography className={classes.body} variant="h5">
+          <Typography className={classes.body} variant="h6">
             {body}
           </Typography>
         </CardContent>

@@ -31,7 +31,7 @@ const useStyle = makeStyles((theme) => ({
   },
   body: {
     color: theme.palette.primary.main,
-    fontWeight: "600",
+    fontWeight: "500",
     margin: "0",
   },
   action: {
@@ -82,7 +82,7 @@ const Comment = ({
         title={username}
       />
       <CardContent className={classes.contect}>
-        <Typography className={classes.body} component="h4">
+        <Typography className={classes.body} variant="h6">
           {children}
         </Typography>
       </CardContent>
@@ -91,6 +91,7 @@ const Comment = ({
         <FormControlLabel
           control={
             <Checkbox
+              style={{display:"none"}}
               icon={<ChatBubbleOutlineOutlinedIcon color="secondary" />}
               checkedIcon={<ChatBubbleOutlinedIcon color="secondary" />}
               name="comment"
