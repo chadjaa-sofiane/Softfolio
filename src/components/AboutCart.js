@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 140,
     "& > img":{
-      objectFit: "contain"
+      objectFit: "cover"
     }
   },
   avatar: {

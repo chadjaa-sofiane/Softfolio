@@ -49,7 +49,7 @@ const useStyle = makeStyles((theme) => ({
   media: {
     height: "0",
     paddingTop: "40%", // 16:9
-    objectFit: "contain",
+    objectFit: "cover",
     width: "100%",
   },
   settingBtn: {
