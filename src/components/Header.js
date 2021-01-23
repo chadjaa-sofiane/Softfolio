@@ -6,6 +6,7 @@ import {
   makeStyles,
   Grid,
   IconButton,
+  withStyles,
   Drawer,
 } from "@material-ui/core";
 import { useHistory, useLocation } from "react-router-dom";
@@ -26,8 +27,15 @@ const useStyles = makeStyles((theme) => ({
   navbar: {
     width: 250,
     padding: 5,
+    zIndex: 1,
   },
 }));
+
+const AppDrawer = withStyles((theme) => ({
+  root: {
+    backdropFilter: "blur(8px)",
+  },
+}))(Drawer);
 
 const Header = () => {
   const history = useHistory();
@@ -45,7 +53,10 @@ const Header = () => {
     <>
       <Paper square>
         <Grid item xs>
-          <IconButton onClick={()=>setnavState(!navState)} className={classes.navButton}>
+          <IconButton
+            onClick={() => setnavState(!navState)}
+            className={classes.navButton}
+          >
             <DehazeIcon color="primary" />
           </IconButton>
         </Grid>
@@ -61,11 +72,15 @@ const Header = () => {
             <Tab label="About" />
           </Tabs>
         </Grid>
-        <Drawer anchor="right" open={navState} onClose={()=>setnavState(false)}>
+        <AppDrawer
+          anchor="right"
+          open={navState}
+          onClose={() => setnavState(false)}
+        >
           <Paper className={classes.navbar}>
             <SettingList />
           </Paper>
-        </Drawer>
+        </AppDrawer>
       </Paper>
     </>
   );

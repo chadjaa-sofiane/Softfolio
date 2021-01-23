@@ -3,6 +3,7 @@ import {
   List,
   ListItem,
   ListItemIcon,
+  ListSubheader,
   ListItemText,
   Avatar,
   makeStyles,
@@ -16,7 +17,6 @@ import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import EmailIcon from "@material-ui/icons/Email";
-import TelegramIcon from "@material-ui/icons/Telegram";
 import ChangeTheme from "../containers/changeTheme";
 import Logout from "../containers/Logout";
 import Login from "../containers/login";
@@ -34,6 +34,10 @@ const useStyle = makeStyles((theme) => ({
       display: "none",
     },
   },
+  link:{
+    color:"inherit",
+    textDecoration:"none"
+  },
   profileAvatar: {
     width: theme.spacing(10),
     height: theme.spacing(10),
@@ -45,17 +49,20 @@ const useStyle = makeStyles((theme) => ({
 
 function SettingCart() {
   const classes = useStyle();
-  return <Paper variant="outlined" className={classes.root}>
-    <SettingList/>
-  </Paper>;
+  return (
+    <Paper variant="outlined" className={classes.root}>
+      <SettingList />
+    </Paper>
+  );
 }
 
-export const SettingList = ()=> {
+export const SettingList = () => {
   const isLoggedIn = useLogged();
+  const classes = useStyle();
   return (
     <>
-      {isLoggedIn && <InfoCart />} 
-      <List component="nav" variant="outlined" style={{width:"100%"}}>
+      {isLoggedIn && <InfoCart />}
+      <List component="nav" variant="outlined">
         <ListItem button>
           <ChangeTheme />
         </ListItem>
@@ -78,7 +85,13 @@ export const SettingList = ()=> {
             </ListItem>
           </Login>
         )}
-        <a href="https://www.facebook.com/profile.php?id=100044256948808">
+        <ListSubheader>
+          <Typography variant="h5">contact me :</Typography>
+        </ListSubheader>
+        <a
+          className={classes.link}
+          href="https://www.facebook.com/profile.php?id=100044256948808"
+        >
           <ListItem button>
             <ListItemIcon>
               <FacebookIcon style={{ color: "blue" }} />
@@ -87,7 +100,7 @@ export const SettingList = ()=> {
           </ListItem>
         </a>
 
-        <a href="https://twitter.com/CSofianne">
+        <a className={classes.link} href="https://twitter.com/CSofianne">
           <ListItem button>
             <ListItemIcon>
               <TwitterIcon style={{ color: "lightblue" }} />
@@ -96,7 +109,7 @@ export const SettingList = ()=> {
             <ListItemText primary="twitter" />
           </ListItem>
         </a>
-        <a href="mailto:sofianne012@gmail.com">
+        <a className={classes.link} href="mailto:sofianne012@gmail.com">
           <ListItem button>
             <ListItemIcon>
               <EmailIcon />
@@ -104,16 +117,10 @@ export const SettingList = ()=> {
             <ListItemText primary="Gmail" />
           </ListItem>
         </a>
-        <ListItem button>
-          <ListItemIcon>
-            <TelegramIcon style={{ color: "lightblue" }} />
-          </ListItemIcon>
-          <ListItemText primary="telegram" />
-        </ListItem>
       </List>
     </>
   );
-}
+};
 
 const InfoCart = () => {
   const classes = useStyle();

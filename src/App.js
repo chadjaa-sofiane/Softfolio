@@ -17,12 +17,13 @@ const AppBackground = withStyles((theme) => ({
   root: {
     background:
       theme.palette.type === "dark"
-        ? `black`
+        ? "black"
         : `url(${process.env.PUBLIC_URL}/assets/background.jpg) no-repeat center center fixed`,
     backgroundSize: "cover",
     zIndex: -1,
     minHeight: "110vh",
     width: "100%",
+    ObjectFit: "contain",
     margin: 0,
   },
 }))(Paper);

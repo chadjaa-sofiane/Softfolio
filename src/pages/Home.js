@@ -5,28 +5,62 @@ import CreatePost from "../components/home/createPost";
 import { GET_POSTS } from "../graphql/querys";
 import { useLogged } from "../util/hooks";
 import Skeleton from "@material-ui/lab/Skeleton";
-import { LinearProgress,Grid } from "@material-ui/core";
+import { LinearProgress, Grid } from "@material-ui/core";
 
 export default function Home() {
   const { loading, error, data } = useQuery(GET_POSTS);
   const isLoggedIn = useLogged();
   if (loading)
     return (
-      <Grid item lg={8} md={10} xs={12}>
-        <LinearProgress/>
-        <div style={{ width: "100%" }}>
-          <Skeleton variant="circle" animation="wave" width={70} height={70} />
-          <Skeleton variant="rect" animation="wave" width="100%" height={150} />
-        </div>
-        <div style={{ width: "100%" }}>
-          <Skeleton variant="circle" animation="wave" width={70} height={70} />
-          <Skeleton variant="rect" animation="wave" width="100%" height={150} />
-        </div>
-        <div style={{ width: "100%" }}>
-          <Skeleton variant="circle" animation="wave" width={70} height={70} />
-          <Skeleton variant="rect" animation="wave" width="100%" height={150} />
-        </div>
-      </Grid>
+      <>
+        <Grid xs={12}>
+          <LinearProgress />
+        </Grid>
+        <Grid item lg={8} md={10} xs={12}>
+          <div style={{ width: "100%" }}>
+            <Skeleton
+              variant="circle"
+              animation="wave"
+              width={70}
+              height={70}
+            />
+            <Skeleton
+              variant="rect"
+              animation="wave"
+              width="100%"
+              height={150}
+            />
+          </div>
+          <div style={{ width: "100%" }}>
+            <Skeleton
+              variant="circle"
+              animation="wave"
+              width={70}
+              height={70}
+            />
+            <Skeleton
+              variant="rect"
+              animation="wave"
+              width="100%"
+              height={150}
+            />
+          </div>
+          <div style={{ width: "100%" }}>
+            <Skeleton
+              variant="circle"
+              animation="wave"
+              width={70}
+              height={70}
+            />
+            <Skeleton
+              variant="rect"
+              animation="wave"
+              width="100%"
+              height={150}
+            />
+          </div>
+        </Grid>
+      </>
     );
   if (error) {
     return <p>'ERROR !'</p>;
