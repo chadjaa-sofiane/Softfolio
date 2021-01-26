@@ -19,10 +19,6 @@ const useStyles = makeStyles((theme) => ({
   navButton: {
     margin: "0 auto",
     float: "right",
-    display: "none",
-    [theme.breakpoints.down("sm")]: {
-      display: "block",
-    },
   },
   navbar: {
     width: 250,
@@ -33,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
 const AppDrawer = withStyles((theme) => ({
   root: {
-    backdropFilter: "blur(8px)",
+    backdropFilter: "blur(5px)",
   },
 }))(Drawer);
 

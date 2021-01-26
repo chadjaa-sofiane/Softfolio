@@ -1,9 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
-import { LinearProgress, Grid } from "@material-ui/core";
+import { LinearProgress } from "@material-ui/core";
 import AuthRoutes from "../util/AuthRoutes";
 import Section from "../components/Section";
-import SettingCart from "../components/SettingCart";
 const Profile = lazy(() => import("./Profile"));
 const Account = lazy(() => import("./account"));
 const Error = lazy(() => import("../components/Error"));
@@ -20,9 +19,6 @@ function AppRouter() {
               <Route path="/profile/:username" component={() => <Profile />} />
               <Section></Section>
             </Switch>
-            <Grid item  md={4} lg={3}>
-              <SettingCart />
-            </Grid>
           </Route>
         </Switch>
       </Suspense>

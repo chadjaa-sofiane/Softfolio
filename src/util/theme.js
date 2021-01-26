@@ -1,8 +1,8 @@
 import { createMuiTheme } from "@material-ui/core";
-import { orange, yellow, deepOrange, grey } from "@material-ui/core/colors";
+import { orange, yellow, deepOrange } from "@material-ui/core/colors";
 
 const themeType = {
-  dark: {
+  light: {
     palette: {
       type: "dark",
       primary: {
@@ -15,24 +15,24 @@ const themeType = {
         main: yellow[500],
         dark: yellow[700],
       },
-      info:{
+      info: {
         light: yellow[300],
         main: yellow[500],
-        dark: yellow[700],  
+        dark: yellow[700],
       },
       background: {
         paper: "rgba(255,255,255,.2)",
       },
     },
   },
-  light: {
+  dark: {
     palette: {
-      type: "light",
+      type: "dark",
       primary: deepOrange,
-      secondary: grey,
-      background:{
-        paper:"rgba(255,255,255,.5)"
-      }
+      secondary: orange,
+      background: {
+        paper: "rgba(0,0,0,.3)",
+      },
     },
   },
 };

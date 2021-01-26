@@ -5,7 +5,8 @@ import CreatePost from "../components/home/createPost";
 import { GET_POSTS } from "../graphql/querys";
 import { useLogged } from "../util/hooks";
 import Skeleton from "@material-ui/lab/Skeleton";
-import { LinearProgress, Grid } from "@material-ui/core";
+import { LinearProgress, Paper, Grid, Typography } from "@material-ui/core";
+import Desc from "../components/Desc";
 
 export default function Home() {
   const { loading, error, data } = useQuery(GET_POSTS);
@@ -67,11 +68,26 @@ export default function Home() {
   }
   return (
     <>
+      <Grid item xs={12}>
+        <Desc />
+      </Grid>
       <Grid item lg={8} sm={6} xs={10}>
+        <Paper style={{marginBottom:30}}>
+          <Typography variant="h4" style={{ textAlign: "center" }}>
+            some Posts : 
+          </Typography>
+        </Paper>
         {isLoggedIn && <CreatePost />}
         {data.getPosts.map((el) => (
           <PostCard key={el._id} postData={el} />
         ))}
+      </Grid>
+      <Grid item xs={12}>
+        <Paper>
+          <Typography variant="h6" style={{ textAlign: "center" }}>
+            copyright@ chadjaa sofiane
+          </Typography>
+        </Paper>
       </Grid>
     </>
   );

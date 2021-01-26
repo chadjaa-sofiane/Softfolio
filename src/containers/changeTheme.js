@@ -16,7 +16,7 @@ function ChangeTheme() {
     <>
       <FormControlLabel
         control={<Switch checked={!!themetype} onChange={onChange} />}
-        label="dark mode"
+        label="dark Paper"
       />
     </>
   );

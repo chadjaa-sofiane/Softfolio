@@ -47,15 +47,6 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-function SettingCart() {
-  const classes = useStyle();
-  return (
-    <Paper variant="outlined" className={classes.root}>
-      <SettingList />
-    </Paper>
-  );
-}
-
 export const SettingList = () => {
   const isLoggedIn = useLogged();
   const classes = useStyle();
@@ -146,4 +137,3 @@ const InfoCart = () => {
     </ButtonBase>
   );
 };
-export default SettingCart;

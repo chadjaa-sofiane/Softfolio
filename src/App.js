@@ -15,10 +15,7 @@ import { THEME_TYPE } from "./graphql/client";
 
 const AppBackground = withStyles((theme) => ({
   root: {
-    background:
-      theme.palette.type === "dark"
-        ? "black"
-        : `url(${process.env.PUBLIC_URL}/assets/background.jpg) no-repeat center center fixed`,
+    background: `url(${process.env.PUBLIC_URL}/assets/background.jpg) no-repeat center center fixed`,
     backgroundSize: "cover",
     zIndex: -1,
     minHeight: "110vh",
