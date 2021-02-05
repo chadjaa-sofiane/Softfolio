@@ -17,36 +17,24 @@ export default function Home() {
         <Grid xs={12}>
           <LinearProgress />
         </Grid>
+          <Grid xs={12}>
+            <div style={{width:"100%"}}>
+            <Skeleton 
+             variant="rect"
+             animation="wave"
+             width="100%"
+             height={200}
+            />
+            </div>
+          </Grid>
         <Grid item lg={8} md={10} xs={12}>
-          <div style={{ width: "100%" }}>
-            <Skeleton
-              variant="circle"
-              animation="wave"
-              width={70}
-              height={70}
-            />
+          <div style={{ width: "100%" ,marginTop:25}}>
             <Skeleton
               variant="rect"
               animation="wave"
               width="100%"
-              height={150}
+              height={40}
             />
-          </div>
-          <div style={{ width: "100%" }}>
-            <Skeleton
-              variant="circle"
-              animation="wave"
-              width={70}
-              height={70}
-            />
-            <Skeleton
-              variant="rect"
-              animation="wave"
-              width="100%"
-              height={150}
-            />
-          </div>
-          <div style={{ width: "100%" }}>
             <Skeleton
               variant="circle"
               animation="wave"
